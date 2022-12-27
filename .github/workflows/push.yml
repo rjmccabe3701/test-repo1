@@ -32,3 +32,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: "Extract input"
+        run: echo "mykey = ${{ github.event.inputs.mykey }}"
