@@ -51,7 +51,7 @@ jobs:
           workflow_file_name: trigger.yml
           ref: main
           wait_interval: 10
-          client_payload: '{ "repo1rev": "${{ gitub.sha }}" }'
+          client_payload: '{ "repo1rev": "${{ github.sha }}" }'
           propagate_failure: false
           trigger_workflow: true
           wait_workflow: false
