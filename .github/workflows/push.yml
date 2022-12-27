@@ -46,7 +46,7 @@ jobs:
         with:
           owner: rjmccabe3701
           repo: test-repo2
-          github_token: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.MY_ACCESS_TOKEN }}
           github_user: rjmccabe3701
           workflow_file_name: trigger.yml
           ref: main
