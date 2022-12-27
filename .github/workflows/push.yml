@@ -38,5 +38,21 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: "Extract input"
-        run: echo "mykey = ${{ github.event.inputs.mykey }}"
+      - name: "Show SHA"
+        run: echo "sha = ${{ github.sha }}"
+
+
+      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: rjmccabe3701
+          repo: test-repo2
+          github_token: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+          github_user: rjmccabe3701
+          workflow_file_name: trigger.yml
+          ref: main
+          wait_interval: 10
+          client_payload: '{ "repo1rev": "${{ gitub.sha }}" }'
+          propagate_failure: false
+          trigger_workflow: true
+          wait_workflow: false
+
